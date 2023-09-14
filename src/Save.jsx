@@ -1,15 +1,15 @@
 import React from 'react';
 import jsPDF from 'jspdf';
 import styles from './styles/Save.module.css'
+
 const Save = () => {
 
 const generatePDF = () => {
-  const report = new jsPDF('portrait', 'pt', 'a4');
+  const doc = new jsPDF('portrait', 'pt', 'a4');
 
-  // Generate the PDF from the "resume" HTML element
-  report.html(document.querySelector('#resume')).then(() => {
-    // Save the PDF
-    report.save('resume.pdf');
+  doc.html(document.querySelector('#resume')).then(() => {
+
+    doc.save('resume.pdf');
   });
 };
 
